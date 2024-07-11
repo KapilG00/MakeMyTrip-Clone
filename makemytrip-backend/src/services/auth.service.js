@@ -46,7 +46,7 @@ async function loginService(data) {
       throw new CustomException(401, "Unauthorized: Wrong password!!");
     }
     if (userType !== validUser.userType) {
-      throw new CustomException(401, "Unauthorized: Invalid user!!");
+      throw new CustomException(401, "Unauthorized: Invalid access!!");
     }
     const accessToken = generateJWTAccessToken(email);
     const refreshToken = generateJWTRefreshToken(email);
@@ -59,6 +59,7 @@ async function loginService(data) {
         id: rest._id,
         username: rest.username,
         email: rest.email,
+        userType: rest.userType,
       },
       accessToken: accessToken,
       refreshToken: refreshToken,

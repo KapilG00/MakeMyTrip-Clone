@@ -8,11 +8,11 @@ const userRouter = require("./src/routes/user.route.js");
 // import cookieParser from "cookie-parser";
 // import path from "path";
 // import authRouter from "./src/routes/auth.route.js";
-// const cors = require("cors");
+const cors = require("cors");
 
 const server = express();
 const port = 8001;
-
+server.use(cors());
 server.use(express.json());
 dotenv.config();
 

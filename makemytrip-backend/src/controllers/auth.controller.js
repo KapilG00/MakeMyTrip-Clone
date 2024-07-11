@@ -21,6 +21,7 @@ async function signUp(req, res, next) {
     });
   } catch (error) {
     res.status(error.statusCode).json({
+      success: false,
       message: "Something went wrong - " + error.message,
     });
   }
@@ -46,6 +47,7 @@ async function userSignIn(req, res, next) {
     }
   } catch (error) {
     res.status(error.statusCode).json({
+      success: false,
       message: "Something went wrong - " + error.message,
     });
   }
@@ -71,6 +73,7 @@ async function adminSignIn(req, res, next) {
     }
   } catch (error) {
     res.status(error.statusCode).json({
+      success: false,
       message: "Something went wrong - " + error.message,
     });
   }
