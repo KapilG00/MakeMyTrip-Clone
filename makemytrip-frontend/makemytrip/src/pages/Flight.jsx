@@ -14,10 +14,6 @@ const Flight = () => {
       .then((response) => response.json())
       .then((data) => {
         setAirports(data);
-
-        // Set a random default value
-        const randomAirport = data[Math.floor(Math.random() * data.length)];
-        setSelectedAirport(randomAirport.code);
       })
       .catch((error) => console.error("Error fetching airport data:", error));
   }, []);

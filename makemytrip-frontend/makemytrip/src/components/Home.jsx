@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineFlight } from "react-icons/md";
 import { FaHotel } from "react-icons/fa6";
-import { HiHome } from "react-icons/hi";
-import { FaUmbrellaBeach } from "react-icons/fa";
-import { BiSolidTrain } from "react-icons/bi";
-import { FaBus } from "react-icons/fa";
-import { FaCarSide } from "react-icons/fa6";
-import { CiCreditCard1 } from "react-icons/ci";
 import { NavLink, Outlet } from "react-router-dom";
+import HomeCard from "./HomeCard";
+import Footer from "./Footer";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 const Home = () => {
+  const [formData, setFormData] = useState([]);
+  const api = "https://make-my-trip-api.vercel.app";
+  useEffect(() => {
+    const fetchListing = async () => {
+      const res = await fetch(api + `/api/listing/get`);
+      const data = await res.json();
+      if (data.success === false) {
+        console.log(data.message);
+        return;
+      }
+      setFormData(data);
+    };
+
+    fetchListing();
+  }, []);
+
   return (
     <>
       <div className="absolute inset-0 top-1/4 flex w-full justify-center">
@@ -38,7 +51,23 @@ const Home = () => {
             Hotels
           </NavLink>
         </div>
+        <div className="absolute bottom-20 text-xl font-semibold uppercase flex gap-5">
+          <FaAngleDoubleDown className="size-7 animate-bounce" />
+          explore more
+          <FaAngleDoubleDown className="size-7 animate-bounce" />
+        </div>
       </div>
+      <div className="bg-[#f2f2f2] px-20 pt-10">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {formData.map((hotel) => (
+            <div key={hotel._id}>
+              <HomeCard key={hotel.id} hotel={hotel} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footer />
+
       <Outlet></Outlet>
     </>
   );
