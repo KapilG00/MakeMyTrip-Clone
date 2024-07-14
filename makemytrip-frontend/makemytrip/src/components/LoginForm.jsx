@@ -35,7 +35,7 @@ function LoginForm() {
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("username", userData.username);
 
-      navigate("/flight");
+      navigate("/");
 
       window.location.reload();
     } catch (error) {

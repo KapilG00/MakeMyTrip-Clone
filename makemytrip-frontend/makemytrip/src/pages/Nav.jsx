@@ -23,7 +23,7 @@ const Navbar = () => {
           className="h-4/5 bg-cover bg-center absolute w-full top-0 -z-10"
         />
         <div className="flex max-h-16 items-center justify-between p-1 px-10 text-xs ">
-          <Link to={"/"}>
+          <Link to={"/flight"}>
             <img
               src="static\images\mmt_dt_top_icon.avif"
               alt="logo"
