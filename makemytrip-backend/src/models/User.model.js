@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-// import userRoles from "../utils/enums.js";
-// import { USER_CREATION_VARIABLE } from "../utils/constants.js";
 
 const userSchema = new mongoose.Schema(
   {

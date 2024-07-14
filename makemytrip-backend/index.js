@@ -4,10 +4,8 @@ const dotenv = require("dotenv");
 
 const authRouter = require("./src/routes/auth.route.js");
 const userRouter = require("./src/routes/user.route.js");
-// import listingRouter from "./routes/listing.route.js";
-// import cookieParser from "cookie-parser";
-// import path from "path";
-// import authRouter from "./src/routes/auth.route.js";
+const adminRouter = require("./src/routes/admin.route.js");
+
 const cors = require("cors");
 
 const server = express();
@@ -18,6 +16,7 @@ dotenv.config();
 
 server.use("/api/auth", authRouter);
 server.use("/api/user", userRouter);
+server.use("/api/admin", adminRouter);
 
 mongoose
   .connect(process.env.DATABASE_URL)

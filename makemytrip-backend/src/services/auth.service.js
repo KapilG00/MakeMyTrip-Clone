@@ -1,9 +1,6 @@
 const User = require("../models/User.model.js");
 const bcrypt = require("bcryptjs");
-const {
-  generateJWTAccessToken,
-  generateJWTRefreshToken,
-} = require("../utils/createJwtToken.js");
+const { generateJWTAccessToken } = require("../utils/createJwtToken.js");
 const { CustomException } = require("../utils/customExceptions.js");
 
 async function registerUserService(data) {
@@ -49,7 +46,7 @@ async function loginService(data) {
       throw new CustomException(401, "Unauthorized: Invalid access!!");
     }
     const accessToken = generateJWTAccessToken(email);
-    const refreshToken = generateJWTRefreshToken(email);
+
     const { password: pass, ...rest } = validUser._doc;
     return {
       success: true,
@@ -62,7 +59,6 @@ async function loginService(data) {
         userType: rest.userType,
       },
       accessToken: accessToken,
-      refreshToken: refreshToken,
     };
   } catch (error) {
     throw new CustomException(error.statusCode, error.message);

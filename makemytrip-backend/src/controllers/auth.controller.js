@@ -1,6 +1,3 @@
-const user = require("../models/User.model.js");
-const jwt = require("jsonwebtoken");
-
 const {
   registerUserService,
   loginService,

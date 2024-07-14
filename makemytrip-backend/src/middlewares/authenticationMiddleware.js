@@ -9,7 +9,7 @@ const authenticateToken = (req, res, next) => {
   decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
     if (err) return res.sendStatus(403);
     req.user = user;
-    console.log("user authenticated!!");
+    console.log("User authenticated successfully!!");
     next();
   });
 };
