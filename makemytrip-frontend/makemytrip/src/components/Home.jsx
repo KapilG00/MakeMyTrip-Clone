@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineFlight } from "react-icons/md";
 import { FaHotel } from "react-icons/fa6";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import HomeCard from "./HomeCard";
 import Footer from "./Footer";
 import { FaAngleDoubleDown } from "react-icons/fa";
 
 const Home = () => {
   const [formData, setFormData] = useState([]);
+  const navigate = useNavigate();
+
+  const username = localStorage.getItem("username");
   const api = "https://make-my-trip-api.vercel.app";
   useEffect(() => {
     const fetchListing = async () => {
@@ -22,6 +25,12 @@ const Home = () => {
 
     fetchListing();
   }, []);
+
+  console.log(username);
+
+  useEffect(() => {
+    username ? navigate("/flight") : navigate("/login");
+  }, [username]);
 
   return (
     <>
