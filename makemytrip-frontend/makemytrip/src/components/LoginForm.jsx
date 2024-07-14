@@ -33,7 +33,9 @@ function LoginForm() {
       setError(message);
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("username", userData.username);
+
       navigate("/flight");
+
       window.location.reload();
     } catch (error) {
       setError(error.message);
@@ -59,7 +61,7 @@ function LoginForm() {
       setError(message);
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("username", userData.username);
-      navigate("/flight");
+      navigate("/profile");
       window.location.reload();
     } catch (error) {
       setError(error.message);

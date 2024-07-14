@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hotel = () => {
   const [city, setCity] = useState("Goa");
@@ -101,9 +102,12 @@ const Hotel = () => {
         </div>
       </div>
       <div className="absolute top-2/3 flex w-full justify-center">
-        <button className="rounded-full bg-gradient-to-r from-blue-400 to-blue-600 px-16 py-2 text-2xl font-bold uppercase text-white">
+        <Link
+          to={"/hotel-list"}
+          className="rounded-full bg-gradient-to-r from-blue-400 to-blue-600 px-16 py-2 text-2xl font-bold uppercase text-white"
+        >
           Search
-        </button>
+        </Link>
       </div>
     </>
   );

@@ -1,11 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { FaAngleDown } from "react-icons/fa";
-// import { FcDepartment } from "react-icons/fc";
-// import { FaUserCircle } from "react-icons/fa";
-// import Modal from "../components/Modal/Modal";
-// import SignIn from "./SignIn";
-// import SignUp from "./SignUp";
-// import { useSelector } from "react-redux";
 import { FaUserAstronaut } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
 
@@ -29,12 +22,12 @@ const Navbar = () => {
           src="src\assets\bg3.jpg"
           className="h-4/5 bg-cover bg-center absolute w-full top-0 -z-10"
         />
-        <div className="flex max-h-16 items-center justify-between p-1 px-10 text-xs hover:cursor-pointer">
+        <div className="flex max-h-16 items-center justify-between p-1 px-10 text-xs ">
           <Link to={"/"}>
             <img
               src="src\assets\mmt_dt_top_icon.avif"
               alt="logo"
-              className="h-full w-44 object-contain"
+              className="h-full w-44 object-contain hover:cursor-pointer"
             />
           </Link>
           <div className="flex gap-3">
@@ -50,7 +43,7 @@ const Navbar = () => {
                   <span className="font-bold text-cyan-500">{username}</span>
                 </div>
                 <div
-                  className="flex items-center gap-1 text-sm font-bold  hover:text-red-400 transition-colors duration-200 ease-in-out"
+                  className="flex items-center gap-1 text-sm font-bold  hover:text-red-400 transition-colors duration-200 ease-in-out hover:cursor-pointer"
                   onClick={logoutHandler}
                 >
                   Logout <IoMdLogOut className="size-6" />
