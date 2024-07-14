@@ -27,7 +27,7 @@ const FlightBookingForm = ({ flight, onClose }) => {
       username: username,
     };
 
-    fetch("/api/user/bookFlight", {
+    fetch(api + "/api/user/bookFlight", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
