@@ -10,7 +10,7 @@ const authenticateToken = require("../middlewares/authenticationMiddleware.js");
 const userRouter = express.Router();
 
 userRouter.post("/bookHotel", authenticateToken, bookHotel);
-userRouter.put("/bookFlight", authenticateToken, bookFlight);
+userRouter.post("/bookFlight", authenticateToken, bookFlight);
 userRouter.get("/bookedHotelList/", authenticateToken, bookedHotelList);
 userRouter.get("/bookedFlightList/", authenticateToken, bookedFlightList);
 
