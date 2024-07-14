@@ -19,13 +19,13 @@ const Navbar = () => {
     <>
       <div className="top-0 w-full text-white h-screen z-10">
         <img
-          src="src\assets\bg3.jpg"
+          src="static\images\bg3.jpg"
           className="h-4/5 bg-cover bg-center absolute w-full top-0 -z-10"
         />
         <div className="flex max-h-16 items-center justify-between p-1 px-10 text-xs ">
           <Link to={"/"}>
             <img
-              src="src\assets\mmt_dt_top_icon.avif"
+              src="static\images\mmt_dt_top_icon.avif"
               alt="logo"
               className="h-full w-44 object-contain hover:cursor-pointer"
             />
@@ -52,7 +52,11 @@ const Navbar = () => {
             )}
             <div>
               <button className="flex h-full items-center gap-1 rounded-md bg-white bg-opacity-10 px-4 py-3 font-bold shadow-lg">
-                <img src="src\assets\india.svg" alt="india" className="w-5" />
+                <img
+                  src="static\images\india.svg"
+                  alt="india"
+                  className="w-5"
+                />
                 <span className="font-bold">IN | ENG | INR</span>
               </button>
             </div>

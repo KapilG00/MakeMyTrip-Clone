@@ -4,7 +4,7 @@ const HotelBookingForm = ({ hotel, onClose }) => {
   const { name, shortDescription, city, price } = hotel;
   const username = localStorage.getItem("username");
   const token = localStorage.getItem("accessToken");
-  const api = "http://localhost:8001";
+  const api = "https://make-my-trip-api-three.vercel.app";
 
   const handleSubmit = (event) => {
     event.preventDefault();

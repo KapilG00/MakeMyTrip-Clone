@@ -6,6 +6,7 @@ function LoginForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
+  const api = "https://make-my-trip-api-three.vercel.app";
 
   function handleChange(e) {
     setFormData({
@@ -17,7 +18,7 @@ function LoginForm() {
   async function handleUserSubmit(e) {
     try {
       e.preventDefault();
-      const res = await fetch("/api/auth/userLogin", {
+      const res = await fetch(api + "/api/auth/userLogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +46,7 @@ function LoginForm() {
   async function handleAdminSubmit(e) {
     try {
       e.preventDefault();
-      const res = await fetch("/api/auth/adminLogin", {
+      const res = await fetch(api + "/api/auth/adminLogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

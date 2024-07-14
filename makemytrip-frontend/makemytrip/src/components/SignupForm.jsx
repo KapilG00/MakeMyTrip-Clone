@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const url = "http://localhost:8001";
+const url = "https://make-my-trip-api-three.vercel.app";
 function SignupForm() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState("");

@@ -6,7 +6,7 @@ const FlightBookingForm = ({ flight, onClose }) => {
   const username = localStorage.getItem("username");
   const token = localStorage.getItem("accessToken");
 
-  const api = "http://localhost:8001";
+  const api = "https://make-my-trip-api-three.vercel.app";
 
   const [date, setDate] = useState("");
 
